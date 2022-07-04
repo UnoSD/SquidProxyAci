@@ -1,4 +1,4 @@
-FROM sameersbn:squid
+FROM sameersbn/squid:latest
 
 RUN sed -i "s/http_access deny all/http_access allow all/" /etc/squid/squid.conf \
     && kill -s HUP $(pgrep squid)
