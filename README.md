@@ -33,4 +33,14 @@ ncat -zw 90 $PROXY_FQDN 3128 && notify-send -t 15000 -i messagebox_critical -e "
 
 # Set up proxy in the browser
 
-Use FoxyProxy on Firefox or any equivalent using $PROXY_FQDN and 3128 as port
+Use FoxyProxy on Firefox or any equivalent using $PROXY_FQDN as hostname and 3128 as port
+
+# Delete and clean up the proxy resources
+
+**Make sure you do not have any other resources that will get unintentionally deleted from the resource group**:
+
+`az resource list -g $RESOURCE_GROUP`
+
+Delete the resource group
+
+`az group delete -g $RESOURCE_GROUP`
